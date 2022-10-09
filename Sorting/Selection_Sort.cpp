@@ -3,20 +3,19 @@ using namespace std;
 
 void selectionSort(int arr[], int n)
 {
-    int temp;
+    int temp,k;
     for(int i = 0; i < n - 1; i++)
     {
-        int Big = i;
-        for(int j = i + 1; j < n; j++)
+        for(int j=k=i; j < n; j++)
         {
-            if(arr[j] < arr[Big])
+            if(arr[j] < arr[k])
             {
-                Big = j;
+                k = j;
             }
         }
         temp = arr[i];
-        arr[i] = arr[Big];
-        arr[Big] = temp;
+        arr[i] = arr[k];
+        arr[k] = temp;
     }
 }
 int main()
